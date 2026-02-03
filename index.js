@@ -17,15 +17,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(
+
+ app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://your-frontend.vercel.app" // 🔁 replace later
-    ],
-    credentials: true
+    origin: "https://frontend-5ea1.vercel.app",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
+
 
 // ✅ DB connect ONCE
 connectDB();
